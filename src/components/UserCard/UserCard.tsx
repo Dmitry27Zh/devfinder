@@ -2,6 +2,7 @@ import { LocalUser } from 'types'
 import styles from './UserCard.module.scss'
 import { UserStat } from 'components/UserStat'
 import { UserTitle } from 'components/UserTitle'
+import { UserInfo } from 'components/UserInfo'
 
 interface UserCardProps extends LocalUser {}
 
@@ -12,6 +13,7 @@ export const UserCard = (props: UserCardProps) => {
       <UserTitle name={props.name} login={props.login} createdAt={props.createdAt} />
       <p className={`${styles.bio} ${props.bio ? '' : styles.empty}`}>{props.bio ?? 'This profile has no bio'}</p>
       <UserStat publicRepos={props.publicRepos} followers={props.followers} following={props.following} />
+      <UserInfo blog={props.blog} company={props.company} location={props.location} twitterUsername={props.location} />
     </div>
   )
 }

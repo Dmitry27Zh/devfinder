@@ -1,21 +1,21 @@
 import { ReactNode } from 'react'
 import styles from './UserInfoItem.module.scss'
 
-interface UserInfoItemProps {
+export interface UserInfoItemProps {
   icon: ReactNode
   text?: string | null
   isLink?: boolean
 }
 
 export const UserInfoItem = ({ icon, text, isLink }: UserInfoItemProps) => {
-  const currentText = text ?? 'Not available'
+  const currentText = text || 'Not available'
   let currentHref: string = ''
 
   if (isLink) {
     currentHref = text && text.startsWith('http') ? text : `https://${text}`
   }
   return (
-    <div className={`${styles.userInfoItem} ${text ? '' : styles.empty}`}>
+    <div className={`${styles.infoItem} ${text ? '' : styles.empty}`}>
       {icon}
       <div>
         {isLink && text ? (

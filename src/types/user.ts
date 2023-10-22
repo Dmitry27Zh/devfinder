@@ -1,16 +1,17 @@
 export type LocalUser = {
   login: string
   id: number
-  avatar: string
+  avatarUrl: string
   name: string
-  company: string
+  publicRepos: number
+  company: string | null
   blog: string
-  location: string
-  bio: string
-  twitter: string
-  public: number
+  location: string | null
+  bio: string | null
+  twitterUsername: string | null
   followers: number
-  created: string
+  following: number
+  createdAt: string
 }
 
 export type User = {
@@ -18,13 +19,14 @@ export type User = {
   id: number
   avatar_url: string
   name: string
-  company: string
+  company: string | null
   blog: string
-  location: string
-  bio: string
-  twitter_username: string
+  location: string | null
+  bio: string | null
+  twitter_username: string | null
   public_repos: number
   followers: number
+  following: number
   created_at: string
 }
 

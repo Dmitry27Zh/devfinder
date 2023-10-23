@@ -9,3 +9,4 @@ export const THEMES = [
 ] as const
 satisfy<Themes>()(THEMES)
 export const INITIAL_THEME_INDEX: ThemeIndices = '0'
+export const BASE_URL = 'https://api.github.com/users/'
